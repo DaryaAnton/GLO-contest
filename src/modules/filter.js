@@ -72,7 +72,7 @@ const filter = (card) => {
     });
 
     statusId.addEventListener('change', function(event) {
-        const selectedStatus = event.target.value.toLowerCase();
+        const selectedStatus = event.target.value;
 
         cards.forEach(function(card) {
             const cardStatus = card.getAttribute('data-status');
@@ -93,7 +93,7 @@ const filter = (card) => {
     });
 
     genderId.addEventListener('change', function(event) {
-        const selectedGender = event.target.value.toLowerCase();
+        const selectedGender = event.target.value;
 
         cards.forEach(function(card) {
             const cardGender = card.getAttribute('data-gender');
@@ -114,7 +114,7 @@ const filter = (card) => {
     });
 
     speciesId.addEventListener('change', function(event) {
-        const selectedSpecies = event.target.value.toLowerCase();
+        const selectedSpecies = event.target.value;
 
         cards.forEach(function(card) {
             const cardSpecies = card.getAttribute('data-species');
@@ -130,9 +130,9 @@ const filter = (card) => {
     //dependence
     const applyFilters = () => {
         cards.forEach((card) => {
-            const matchesStatus = resultsFilters.status === '' || card.getAttribute('data-status').toLowerCase() === resultsFilters.status;
-            const matchesGender = resultsFilters.gender === '' || card.getAttribute('data-gender').toLowerCase() === resultsFilters.gender;
-            const matchesSpecies = resultsFilters.species === '' || card.getAttribute('data-species').toLowerCase() === resultsFilters.species;
+            const matchesStatus = resultsFilters.status === '' || card.getAttribute('data-status') === resultsFilters.status;
+            const matchesGender = resultsFilters.gender === '' || card.getAttribute('data-gender') === resultsFilters.gender;
+            const matchesSpecies = resultsFilters.species === '' || card.getAttribute('data-species') === resultsFilters.species;
     
             if (matchesStatus && matchesGender && matchesSpecies) {
                 card.style.display = '';
@@ -143,17 +143,17 @@ const filter = (card) => {
     };
     
     statusId.addEventListener('change', (event) => {
-        resultsFilters.status = event.target.value.toLowerCase();
+        resultsFilters.status = event.target.value;
         applyFilters();
     });
     
     genderId.addEventListener('change', (event) => {
-        resultsFilters.gender = event.target.value.toLowerCase();
+        resultsFilters.gender = event.target.value;
         applyFilters();
     });
     
     speciesId.addEventListener('change', (event) => {
-        resultsFilters.species = event.target.value.toLowerCase();
+        resultsFilters.species = event.target.value;
         applyFilters();
     });
 }
