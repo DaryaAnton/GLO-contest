@@ -21,7 +21,10 @@ const render = (card) => {
         }
 
         cardWrapper.insertAdjacentHTML('beforeend', `
-            <div class="hero__card">
+            <div class="hero__card" 
+            data-status="${(item.status || '').toLowerCase()}" 
+            data-gender="${(item.gender || '').toLowerCase()}" 
+            data-species="${(item.species || '').toLowerCase()}">
                 <div class="hero__card-front" style="background-image: url('${item.photo}')">
                 </div>
 

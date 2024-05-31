@@ -5,7 +5,7 @@ const preloader = () => {
         preloader.classList.add('hide');
         setTimeout(() => {
             preloader.remove();
-        }, 3000)
+        }, 600)
     })
 }
 
