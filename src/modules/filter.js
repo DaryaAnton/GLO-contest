@@ -41,15 +41,15 @@ const filter = (card) => {
         moviesId.append(option);
     });
 
-    moviesId.addEventListener('change', function(event) {
+    moviesId.addEventListener('change', (event) => {
         const selectedMovie = event.target.value;
 
         if (selectedMovie === '') {
-            cards.forEach(function(card) {
+            cards.forEach((card) => {
                 card.style.display = '';
             });
         }else {
-            cards.forEach(function(card) {
+            cards.forEach((card) => {
                 const moviesList = card.querySelectorAll('.hero__card-movies li');
                 const moviesArray = Array.from(moviesList).map(function(li) {
                     return li.textContent;
@@ -71,10 +71,10 @@ const filter = (card) => {
         statusId.append(option);
     });
 
-    statusId.addEventListener('change', function(event) {
+    statusId.addEventListener('change', (event) => {
         const selectedStatus = event.target.value;
 
-        cards.forEach(function(card) {
+        cards.forEach((card) => {
             const cardStatus = card.getAttribute('data-status');
 
             if (selectedStatus === '' || cardStatus === selectedStatus) {
@@ -92,10 +92,10 @@ const filter = (card) => {
         genderId.append(option);
     });
 
-    genderId.addEventListener('change', function(event) {
+    genderId.addEventListener('change', (event) => {
         const selectedGender = event.target.value;
 
-        cards.forEach(function(card) {
+        cards.forEach((card) => {
             const cardGender = card.getAttribute('data-gender');
 
             if (selectedGender === '' || cardGender === selectedGender) {
@@ -113,10 +113,10 @@ const filter = (card) => {
         speciesId.append(option);
     });
 
-    speciesId.addEventListener('change', function(event) {
+    speciesId.addEventListener('change', (event) => {
         const selectedSpecies = event.target.value;
 
-        cards.forEach(function(card) {
+        cards.forEach((card) =>{
             const cardSpecies = card.getAttribute('data-species');
 
             if (selectedSpecies === '' || cardSpecies === selectedSpecies) {
