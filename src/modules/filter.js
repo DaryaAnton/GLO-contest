@@ -129,6 +129,7 @@ const filter = (card) => {
 
     //dependence
     const applyFilters = () => {
+        let visibleCards = 0;
         cards.forEach((card) => {
             const matchesStatus = resultsFilters.status === '' || card.getAttribute('data-status') === resultsFilters.status;
             const matchesGender = resultsFilters.gender === '' || card.getAttribute('data-gender') === resultsFilters.gender;
@@ -136,10 +137,20 @@ const filter = (card) => {
     
             if (matchesStatus && matchesGender && matchesSpecies) {
                 card.style.display = '';
+                visibleCards++;
             } else {
                 card.style.display = 'none';
             }
         });
+
+        const oops = document.getElementById('oops');
+        if (visibleCards === 0) {
+            oops.style.display = 'flex';
+            oops.style.alignItems = 'center';
+            oops.style.justifyContent = 'center';
+        } else {
+            oops.style.display = 'none';
+        }
     };
     
     statusId.addEventListener('change', (event) => {

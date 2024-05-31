@@ -114,6 +114,7 @@ body {
 
 .hero {
   padding: 30px;
+  min-height: 700px;
 }
 .hero__wrapper {
   width: 100%;
