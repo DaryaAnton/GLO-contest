@@ -10,6 +10,7 @@ const filter = (card) => {
     const allSpecies = new Set();
 
     const cards = document.querySelectorAll('.hero__card');
+    const oops = document.getElementById('oops');
 
     const resultsFilters = {
         status: '',
@@ -143,7 +144,6 @@ const filter = (card) => {
             }
         });
 
-        const oops = document.getElementById('oops');
         if (visibleCards === 0) {
             oops.style.display = 'flex';
             oops.style.alignItems = 'center';
